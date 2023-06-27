@@ -79,5 +79,5 @@ def main():
         st.write("Predicted Label:", predicted_label)
 
 # Run the app
-if _name_ == '_main_':
+if __name__ == '__main__':
     main()
