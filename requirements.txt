@@ -6,3 +6,4 @@ tensorflow
 pandas
 numpy
 Conv1d
+np_utils
