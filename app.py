@@ -117,7 +117,7 @@ def main():
     # Make predictions if all features are provided
     if st.button("Predict"):
         features = [Diabetic, Age_Class, HeartRate_Class, BloodOxygenLevel_Class, BodyTemperature_Class, Weight_Class]
-        predicted_label = predict_dementia(predicted_index)
+        predicted_label = predict_dementia(features)
         st.write("Predicted Label:", predicted_label)
 
 # Run the app
