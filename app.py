@@ -18,11 +18,11 @@ y = data['Dementia']
 x = data.drop('Dementia', axis=1)
 
 # Split into training and testing data
-X_train, X_test, y_train, y_test = train_test_split ( X, y,
+# X_train, X_test, y_train, y_test = train_test_split ( X, y,
                                                      test_size = 0.2,
                                                      random_state = 1,
                                                      stratify = y)
-# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1,stratify = y)
 
 # Standardize the data
 sc = StandardScaler()
@@ -46,8 +46,8 @@ model.add(Dense(100, activation='relu'))
 model.add(Dense(n_outputs, activation='softmax'))
 
 # Compile the model
-# model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+# model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Load the trained model weights
 model.load_weights("DementiaDetection_DL_Model_1DCNN_CSV.h5")
