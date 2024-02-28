@@ -65,9 +65,13 @@ def predict_dementia(features):
 
     # Make predictions
     prediction = model.predict(processed_features)[0]
+    predicted_index = np.argmax(prediction)
 
     # Get the predicted class label
-    predicted_label = class_labels[int(np.round(prediction))]
+    predicted_label = class_labels[predicted_index]
+
+    # Get the predicted class label
+    # predicted_label = class_labels[int(np.round(prediction))]
 
     return predicted_label
 
@@ -96,8 +100,6 @@ def main():
     # Make predictions if all features are provided
     if st.button("Predict"):
         features = [Diabetic, Age_Class, HeartRate_Class, BloodOxygenLevel_Class, BodyTemperature_Class, Weight_Class]
-        prediction = model.predict(features)
-        predicted_index = np.argmax(prediction) 
         predicted_label = predict_dementia(predicted_index)
         st.write("Predicted Label:", predicted_label)
 
