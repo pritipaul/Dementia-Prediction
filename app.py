@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, GRU, TimeDistributed
 from keras.layers import Conv1D, MaxPooling1D, Flatten
-from keras.utils import np_utils
+# from keras.utils import np_utils
 
 # Load the dataset
 data = pd.read_csv("./Dataset/Dementia_new_data.csv")
