@@ -11,7 +11,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 
 # Load the dataset
-data = pd.read_csv("./Dataset/Dementia_Detection_clead_data.csv")
+data = pd.read_csv("./Dataset/Dementia_new_data.csv")
 
 # url = "https://github.com/pritipaul/Dementia-Prediction/blob/main/Dataset/Dementia_Detection_clead_data.csv"
 # data = pd.read_csv(url)
