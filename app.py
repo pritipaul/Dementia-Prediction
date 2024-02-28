@@ -59,21 +59,38 @@ model.load_weights("DementiaDetection_DL_Model_1DCNN_CSV.h5")
 class_labels = ['Non-Demented', 'Demented']
 
 # Function to make predictions
+# def predict_dementia(features):
+#     # Preprocess the features
+#     processed_features = sc.transform([features])
+
+#     # Make predictions
+#     prediction = model.predict(processed_features)[0]
+#     predicted_index = np.argmax(prediction)
+
+#     # Get the predicted class label
+#     predicted_label = class_labels[predicted_index]
+
+#     # Get the predicted class label
+#     # predicted_label = class_labels[int(np.round(prediction))]
+
+#     return predicted_label
+
 def predict_dementia(features):
     # Preprocess the features
     processed_features = sc.transform([features])
 
     # Make predictions
     prediction = model.predict(processed_features)[0]
+
+    # Get the predicted class index
     predicted_index = np.argmax(prediction)
 
     # Get the predicted class label
     predicted_label = class_labels[predicted_index]
 
-    # Get the predicted class label
-    # predicted_label = class_labels[int(np.round(prediction))]
-
     return predicted_label
+
+
 
 # Streamlit app code
 def main():
