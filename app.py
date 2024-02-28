@@ -37,7 +37,7 @@ x_test_sc = sc.transform(x_test)
 # model.add(Dense(units=1, kernel_initializer='glorot_uniform', activation='sigmoid'))
 
 
-n_features, n_outputs = X_train_new.shape[1], 2
+n_features, n_outputs = x_train_sc.shape[1], 2
 model = Sequential()
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(n_features,1)))
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu'))
