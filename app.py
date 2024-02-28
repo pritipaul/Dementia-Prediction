@@ -96,7 +96,9 @@ def main():
     # Make predictions if all features are provided
     if st.button("Predict"):
         features = [Diabetic, Age_Class, HeartRate_Class, BloodOxygenLevel_Class, BodyTemperature_Class, Weight_Class]
-        predicted_label = predict_dementia(features)
+        prediction = model.predict(features)
+        predicted_index = np.argmax(prediction) 
+        predicted_label = predict_dementia(predicted_index)
         st.write("Predicted Label:", predicted_label)
 
 # Run the app
