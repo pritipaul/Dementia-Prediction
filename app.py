@@ -75,18 +75,24 @@ def main():
     st.write("Enter the patient's features and predict whether they are demented or non-demented.")
 
     # Feature inputs
-    gender = st.radio("Gender", [0, 1])
-    age = st.number_input("Age", min_value=0)
-    educ = st.number_input("EDUC", min_value=0)
-    ses = st.number_input("SES", min_value=0)
-    mmse = st.number_input("MMSE", min_value=0)
-    cdr = st.number_input("CDR", min_value=0.0, max_value=1.0, step=0.1)
-    etiv = st.number_input("eTIV", min_value=0)
-    nwbv = st.number_input("nWBV", min_value=0.0, max_value=1.0, step=0.001)
+    Diabetic = st.radio("Diabetic", [0, 1])
+    Age_Class = st.radio("Age_Class", [0, 1, 2])
+    HeartRate_Class = st.radio("HeartRate_Class", [0, 1, 2])
+    BloodOxygenLevel_Class = st.radio("BloodOxygenLevel_Class", [0, 1, 2])
+    BodyTemperature_Class = st.radio("BodyTemperature_Class", [0, 1, 2])
+    Weight_Class = st.radio("Weight_Class", [0, 1, 2])
+
+    # age = st.number_input("Age", min_value=0)
+    # educ = st.number_input("EDUC", min_value=0)
+    # ses = st.number_input("SES", min_value=0)
+    # mmse = st.number_input("MMSE", min_value=0)
+    # cdr = st.number_input("CDR", min_value=0.0, max_value=1.0, step=0.1)
+    # etiv = st.number_input("eTIV", min_value=0)
+    # nwbv = st.number_input("nWBV", min_value=0.0, max_value=1.0, step=0.001)
 
     # Make predictions if all features are provided
     if st.button("Predict"):
-        features = [gender, age, educ, ses, mmse, cdr, etiv, nwbv]
+        features = [Diabetic, Age_Class, HeartRate_Class, BloodOxygenLevel_Class, BodyTemperature_Class, Weight_Class]
         predicted_label = predict_dementia(features)
         st.write("Predicted Label:", predicted_label)
 
