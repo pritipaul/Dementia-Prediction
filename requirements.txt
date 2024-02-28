@@ -7,3 +7,4 @@ pandas
 numpy
 Conv1d
 np_utils
+n_features
