@@ -13,15 +13,16 @@ from sklearn.metrics import accuracy_score
 # Load the dataset
 data = pd.read_csv("./Dataset/Dementia_new_data.csv")
 
-# url = "https://github.com/pritipaul/Dementia-Prediction/blob/main/Dataset/Dementia_Detection_clead_data.csv"
-# data = pd.read_csv(url)
-
 # Split into features and target
-y = data['Group']
-x = data.drop('Group', axis=1)
+y = data['Dementia']
+x = data.drop('Dementia', axis=1)
 
 # Split into training and testing data
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split ( X, y,
+                                                     test_size = 0.2,
+                                                     random_state = 1,
+                                                     stratify = y)
+# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
 # Standardize the data
 sc = StandardScaler()
@@ -29,16 +30,27 @@ x_train_sc = sc.fit_transform(x_train)
 x_test_sc = sc.transform(x_test)
 
 # Build the model
+# model = Sequential()
+# model.add(Dense(units=6, kernel_initializer='he_uniform', activation='relu', input_dim=8))
+# model.add(Dense(units=6, kernel_initializer='he_uniform', activation='relu'))
+# model.add(Dense(units=1, kernel_initializer='glorot_uniform', activation='sigmoid'))
+
 model = Sequential()
-model.add(Dense(units=6, kernel_initializer='he_uniform', activation='relu', input_dim=8))
-model.add(Dense(units=6, kernel_initializer='he_uniform', activation='relu'))
-model.add(Dense(units=1, kernel_initializer='glorot_uniform', activation='sigmoid'))
+model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(n_features,1)))
+model.add(Conv1D(filters=64, kernel_size=2, activation='relu'))
+model.add(Dropout(0.2))
+# dropout to prevent overfitting
+model.add(MaxPooling1D(pool_size=2))
+model.add(Flatten())
+model.add(Dense(100, activation='relu'))
+model.add(Dense(n_outputs, activation='softmax'))
 
 # Compile the model
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+# model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Load the trained model weights
-model.load_weights("DementiaDetection_DL_Model.h5")
+model.load_weights("DementiaDetection_DL_Model_1DCNN_CSV.h5")
 
 # Define class labels
 class_labels = ['Non-Demented', 'Demented']
