@@ -98,6 +98,13 @@ def main():
     st.title("Dementia Classifier using MOD-1D-CNN")
     st.write("Enter the health metrics features and predict whether demented or non-demented.")
     st.write("Enter the health metrics features and predict whether demented or non-demented.")
+    bullet_points = [
+    "Item 1",
+    "Item 2",
+    "Item 3"
+     ]
+
+    st.write("- " + "\n- ".join(bullet_points))
 
     # Feature inputs
     Diabetic = st.radio("Diabetic", [0, 1])
