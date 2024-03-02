@@ -95,8 +95,9 @@ def predict_dementia(features):
 # Streamlit app code
 def main():
     # Set the app title and description
-    st.title("Dementia Classifier")
-    st.write("Enter the patient's features and predict whether they are demented or non-demented.")
+    st.title("Dementia Classifier using MOD-1D-CNN")
+    st.write("Enter the health metrics features and predict whether demented or non-demented.")
+    st.write("Enter the health metrics features and predict whether demented or non-demented.")
 
     # Feature inputs
     Diabetic = st.radio("Diabetic", [0, 1])
