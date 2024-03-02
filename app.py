@@ -94,7 +94,7 @@ def predict_dementia(features):
 
 # Streamlit app code
 def main():
-    st.image("path/to/your/logo.png", width=100)
+    st.image("./logo.png", width=100)
     st.markdown("""
     <style>
         
