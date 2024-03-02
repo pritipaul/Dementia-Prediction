@@ -94,8 +94,8 @@ def predict_dementia(features):
 
 # Streamlit app code
 def main():
+    st.markdown("<center><img src='path/to/your/image.png' width='200'></center>", unsafe_allow_html=True)
     st.markdown("""
-    <center><img src='./Logo.png' width='200'></center>
     <style>
         
         body {
