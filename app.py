@@ -97,11 +97,14 @@ def main():
     # Set the app title and description
     st.title("Dementia Classifier using MOD-1D-CNN")
     st.write("Enter the health metrics features and predict whether demented or non-demented.")
-    st.write("Enter the health metrics features and predict whether demented or non-demented.")
+    st.write("Health Metrics Input Format")
     bullet_points = [
-    "Item 1",
-    "Item 2",
-    "Item 3"
+    "Diabetic status (0 for absence or 1 for presence)",
+    "Age: 1(40-64) or 2(65-70) or 3(75-90)",
+    "Heart rate: 1(<60bpm) or 2(60bpm – 100bpm) or 3(>100bpm)",
+    "Blood oxygen level (1(<95%) or 2(95%-100%) or 3(>100%))",
+    "Body temperature: 1(<36.5oC) or 2(36.5oC – 37.5oC) or 3(>37.5oC)",
+    "Weight: 1(<50kg) or 2(50kg – 70kg) or 3(>70kg)"
      ]
 
     st.write("- " + "\n- ".join(bullet_points))
