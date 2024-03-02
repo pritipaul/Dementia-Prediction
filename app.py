@@ -95,9 +95,10 @@ def predict_dementia(features):
 # Streamlit app code
 def main():
     # Set the app title and description
-    st.title("Dementia Classifier using MOD-1D-CNN")
+    st.markdown("""<h1 style='text-align: center;'>Dementia Classifier using MOD-1D-CNN</h1>""", unsafe_allow_html=True)
+    # st.title("Dementia Classifier using MOD-1D-CNN")
     st.write("Enter the health metrics features and predict whether demented or non-demented.")
-    st.write("Health Metrics Input Format")
+    st.write("**Health Metrics Input Format:**")
     bullet_points = [
     "**Diabetic status (0 for absence or 1 for presence)**",
     "**Age: 1(40-64) or 2(65-70) or 3(75-90)**",
