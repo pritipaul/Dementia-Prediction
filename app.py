@@ -94,6 +94,13 @@ def predict_dementia(features):
 
 # Streamlit app code
 def main():
+    st.markdown("""
+    <style>
+        body {
+            background-color: #f0f0f0; /* You can replace #f0f0f0 with any color code */
+        }
+    </style>
+    """, unsafe_allow_html=True)
     # Set the app title and description
     st.markdown("""<h1 style='text-align: center;'>Dementia Classifier using<br>MOD-1D-CNN</h1>""", unsafe_allow_html=True)
     # st.title("Dementia Classifier using MOD-1D-CNN")
