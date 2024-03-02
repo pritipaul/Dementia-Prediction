@@ -99,7 +99,7 @@ def main():
     <style>
         
         body {
-            background-color: #f0f0f0; /* You can replace #f0f0f0 with any color code */
+            background-color: #9dc183; 
         }
     </style>
     """, unsafe_allow_html=True)
