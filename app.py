@@ -14,6 +14,7 @@ from keras.layers import Activation, GRU, TimeDistributed
 from tensorflow.keras.layers import Conv1D, MaxPooling1D, Flatten, Dense, Dropout
 # from keras.utils import np_utils
 from streamlit_gsheets import GSheetsConnection
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
 # Load the dataset
 data = pd.read_csv("./Dataset/Dementia_new_data.csv")
