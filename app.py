@@ -1,5 +1,4 @@
 import streamlit as st
-import sklearn
 import numpy as np
 import pandas as pd
 # import tensorflow as tf
@@ -14,8 +13,7 @@ from keras.models import Sequential
 from keras.layers import Activation, GRU, TimeDistributed
 from tensorflow.keras.layers import Conv1D, MaxPooling1D, Flatten, Dense, Dropout
 # from keras.utils import np_utils
-from streamlit_gsheets import GSheetsConnection
-conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+
 
 # Load the dataset
 data = pd.read_csv("./Dataset/Dementia_new_data.csv")
@@ -116,11 +114,11 @@ def main():
 
     # Feature inputs
     Diabetic = st.radio("Diabetic", [0, 1])
-    Age_Class = st.radio("Age_Class", [0, 1, 2])
-    HeartRate_Class = st.radio("HeartRate_Class", [0, 1, 2])
-    BloodOxygenLevel_Class = st.radio("BloodOxygenLevel_Class", [0, 1, 2])
-    BodyTemperature_Class = st.radio("BodyTemperature_Class", [0, 1, 2])
-    Weight_Class = st.radio("Weight_Class", [0, 1, 2])
+    Age_Class = st.radio("Age_Class", [1, 2, 3])
+    HeartRate_Class = st.radio("HeartRate_Class", [1, 2, 3])
+    BloodOxygenLevel_Class = st.radio("BloodOxygenLevel_Class", [1, 2, 3])
+    BodyTemperature_Class = st.radio("BodyTemperature_Class", [1, 2, 3])
+    Weight_Class = st.radio("Weight_Class", [1, 2, 3])
 
     # age = st.number_input("Age", min_value=0)
     # educ = st.number_input("EDUC", min_value=0)
