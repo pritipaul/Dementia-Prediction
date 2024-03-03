@@ -6,4 +6,3 @@ tensorflow
 pandas
 numpy
 Conv1d
-st-gsheets-connection
